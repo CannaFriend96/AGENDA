@@ -1,0 +1,2 @@
+# AGENDA
+ ejercicio practico
