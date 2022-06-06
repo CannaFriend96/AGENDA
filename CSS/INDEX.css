@@ -1,0 +1,39 @@
+.img-responsiva{
+	max-width: 100%;
+	height: auto;
+}
+
+#div_logo{
+	text-align: center;
+	padding-top: 20px;
+	padding-bottom: 0px;
+}
+
+.caja_radio{
+	border: 1px black solid;
+}
+
+h1{
+	margin-top: 20px;
+	
+}
+
+#caja{
+	margin-top: 180px;
+	border: 2px solid #03f0fc;
+	border-radius: 5px;
+}
+
+#formulario{
+	margin-bottom: 25px;
+}
+
+#etiqueta{
+	font-weight: bold;
+	font-size: 22px;
+}
+
+.input-group{
+	margin-top: 15px;
+	margin-bottom: 15px;
+}

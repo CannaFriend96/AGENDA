@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+		<title>Agenda Medica - Marvin Garcia</title>
+
+		<!-- CSS -->
+		<link href="/AGENDA/CSS/bootstrap.css" rel="stylesheet" />
+		<link href="/AGENDA/CSS/bootstrap-grid.css" rel="stylesheet" />
+		<link href="/AGENDA/CSS/bootstrap-reboot.css" rel="stylesheet" />
+		<link href="/AGENDA/CSS/bootstrap-utilities.css" rel="stylesheet" />
+
+		<!-- CALENDARIO -->
+		<link href="/AGENDA/CSS/main.css" rel="stylesheet" />
+
+		<link href="/AGENDA/CSS/AGENDA.css" rel="stylesheet" />
+
+		<!-- DATE PICKER -->
+		<link href="/AGENDA/CSS/jquery-ui.css" rel="stylesheet" />
+		<link href="/AGENDA/CSS/jquery-ui.structure.css" rel="stylesheet" />
+		<link href="/AGENDA/CSS/jquery-ui.theme.css" rel="stylesheet" />
+
+
+		<!-- ICONOS -->
+		<script src="https://kit.fontawesome.com/174047bc34.js" crossorigin="anonymous"></script>
+
+	</head>
+
+	<body>
+
+		<!--MENU-->
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    
+    		<a class="navbar-brand" href="#" style="padding-left: 15px;"><i class="fa-solid fa-hospital-user"></i></a>
+    
+    		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      			<span class="navbar-toggler-icon"></span>
+    		</button>
+
+		    <div class="collapse navbar-collapse" id="navbarColor01">
+		      	<ul class="navbar-nav mr-auto">
+		        	<li class="nav-item active">
+		          		<a class="nav-link active" href="/AGENDA/AGENDA.html">Inicio</a>
+		        	</li>
+		      	</ul>
+		    </div>
+
+		    <form class="form-inline">
+		    	<label id="usu_tag">usuario@prueba.com</label>
+		      	<button class="btn btn-outline-info my-2 my-sm-0" type="button" style="margin-right: 15px;" id="logout" name="logout">Cerrar Sesi&oacute;n</button>
+		    </form>
+  		</nav>
+
+  		<!--TITULO-->
+  		<div class="container" id="titulo">
+  			<div class="row">
+  				<div class="col-md-12">
+  					<h1><i class="fa-solid fa-calendar-day"></i> Calendario de Citas</h1>
+  					<hr>
+  				</div>
+  			</div>
+  			<!--BOTON MODAL-->
+	  		<div class="row" style="padding-top: 25px;">
+				<div class="col-md-12">
+					<button class="btn btn-success" style="float: left;" data-bs-toggle="modal" data-bs-target="#modal1" id="btnModal"><i class="fas fa-plus-circle"></i>&nbsp;&nbsp;Nueva Cita</button>
+				</div>
+			</div>
+  		</div>
+
+  		<!--CALENDARIO-->
+  		<div class="container" style="padding-top: 15px;">
+  			<div class="row">
+  				<div class="col-md-12">
+  					<div id="calendario"></div>
+  				</div>
+  			</div>
+  		</div>
+
+  		<!--MODAL REGISTRO-->
+  		<div class="modal fade" id="modal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		  	<div class="modal-dialog modal-lg">
+		    	<div class="modal-content">
+		      		<div class="modal-header">
+		        		<h5 class="modal-title" id="tituloModal">Registro de Citas</h5>
+		        		<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+		      		</div>
+			      	<div class="modal-body">
+			      		<input type="hidden" id="id_oculto" value="0">
+			        	<div class="row" style="padding-top: 15px;">
+							<div class="col-md-4">
+								<label for="nombre" id="etiqueta" class="form-label">Nombre</label>
+								<input type="text" name="nombre" placeholder="Marvin" class="form-control form-control-lg" id="nombre">
+							</div>
+							<div class="col-md-4">
+								<label for="ap" id="etiqueta" class="form-label">Apellido Parterno</label>
+								<input type="text" name="ap" placeholder="Garcia" class="form-control form-control-lg" id="ap">
+							</div>
+							<div class="col-md-4">
+								<label for="am" id="etiqueta" class="form-label">Apellido Materno</label>
+								<input type="text" name="am" placeholder="Gonzalez" class="form-control form-control-lg" id="am">
+							</div>
+						</div>
+						<div class="row" style="padding-top: 15px;">
+							<div class="col-md-3">
+								<label for="edad" id="etiqueta" class="form-label">Edad</label>
+								<input type="number" name="edad" placeholder="25" class="form-control form-control-lg" id="edad">
+							</div>
+							<div class="col-md-4">
+								<label for="fecha" id="etiqueta" class="form-label">Fecha de Cita</label>
+								<input type="text" name="fecha" placeholder="05/06/2022" class="form-control form-control-lg" id="fecha">
+							</div>
+							<div class="col-md-5">
+								<label for="horario" id="etiqueta" class="form-label">Horario</label>
+								<select class="form-control form-control-lg" id="horario">
+								    <option value="09:00:00-09:20:00">09:00 a.m. - 09:20 a.m.</option>
+								    <option value="09:20:00-09:40:00">09:20 a.m. - 09:40 a.m.</option>
+								    <option value="09:40:00-10:00:00">09:40 a.m. - 10:00 a.m.</option>
+								    <option value="10:00:00-10:20:00">10:00 a.m. - 10:20 a.m.</option>
+								    <option value="10:20:00-10:40:00">10:20 a.m. - 10:40 a.m.</option>
+								    <option value="10:40:00-11:00:00">10:40 a.m. - 11:00 a.m.</option>
+							 	</select>
+							</div>
+						</div>
+						<div class="row" style="padding-top: 15px;">
+							<div class="col-md-7">
+								<label for="localidad" id="etiqueta" class="form-label">Localidad</label>
+								<input type="text" name="localidad" placeholder="Ave. falsa #123, Col. ABC, Reynosa, Tamps" class="form-control form-control-lg" id="localidad">
+							</div>
+							<div class="col-md-5">
+								<label for="correo" id="etiqueta" class="form-label">Correo El&eacute;ctronico</label>
+								<input type="email" name="correo" placeholder="nombre.apellido@dominio.com" class="form-control form-control-lg" id="correo">
+							</div>
+						</div>
+						<div class="row" style="padding-top: 15px;">
+							<div class="col-md-3">
+								<label for="tel" id="etiqueta" class="form-label">Tel&eacute;fono</label>
+								<input type="text" name="tel" placeholder="8994257597" class="form-control form-control-lg" id="tel">
+							</div>
+							<div class="col-md-5">
+								<label for="medio" id="etiqueta" class="form-label">Medio por el cual se enter&oacute;</label>
+								<select class="form-control form-control-lg" id="medio">
+								    <option value="Tv">Televisi&oacute;n</option>
+								    <option value="Internet">Internet</option>
+								    <option value="Radio">Radio</option>
+								    <option value="Amigo">Amigo</option>
+								    <option value="Familiar">Familiar</option>
+							 	</select>
+							</div>
+							<div class="col-md-4">
+								<label for="medico" id="etiqueta" class="form-label">Medico</label>
+								<select class="form-control form-control-lg" id="medico">
+								    <option value="Dr. Simi">Dr. Simi</option>
+								    <option value="Dr. Chapatin">Dr. Chapatin</option>
+								    <option value="Dr. Dre">Dr. Dre</option>
+							 	</select>
+							</div>
+						</div>
+						<div class="row" style="padding-top: 15px;">
+							<div class="col-md-12">
+								<label for="observacion" id="etiqueta" class="form-label">Observaciones</label>
+								<textarea class="form-control" id="observacion" rows="5"></textarea>
+							</div>
+						</div>
+			      	</div>
+			      	<div class="modal-footer">
+				        <input type="button" class="btn btn-danger" id="cancelar" data-bs-dismiss="modal" value="Cancelar">
+				        <input type="button" class="btn btn-primary" id="registrar" name="registrar" value="Agendar">
+			      	</div>
+		   		</div>
+		  	</div>
+		</div>
+
+		<!--JS -->
+		<script src="/AGENDA/JS/moment.min.js"></script>
+		<script src="/AGENDA/JS/jquery.min.js"></script>
+		<!-- CALENDARIO -->
+		<script src="/AGENDA/JS/main.js"></script>
+		<script src="/AGENDA/JS/locales-all.js"></script>
+
+		<script src="/AGENDA/JS/bootstrap.js"></script>
+		<script src="/AGENDA/JS/bootstrap.bundle.js"></script>
+
+		<script src="/AGENDA/JS/AGENDA.js"></script>
+
+		<!-- DATE PICKER -->
+		<script src="/AGENDA/JS/jquery-ui.js"></script>
+	</body>
+
+</html>
